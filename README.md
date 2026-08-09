@@ -1,5 +1,13 @@
 # ComfyUI-LazyLoading-DiT
 
+Lets you run FP16 Krea / Flux on Apple Silicon by streaming layers from SSD. No impact on quality because you're loading the full model.
+
+You end up with Flux 2 Dev at FP8 consuming ~14GB including TE, Qwen-Image-2511 with a similar footprint, and Klein 9B FP16 taking up ~7GB including TE.
+
+On my M5 Pro 16c this turned out to not nearly as slow as it sounds: you spend a lot of time on compute anyway, which makes SSD streaming less painful. During test runs I observed up to about a ~10% slowdown per model, but YMMV, I haven't conducted proper benchmarks yet. Either way, this opens up the possibility to use large models in ComfyUI alongside LLMs or fit models that wouldn't otherwise fit.
+
+---
+
 Run **large diffusion transformer (DiT) models on a memory-tight Mac.**
 
 This is a pair of drop-in ComfyUI nodes that load FLUX-family / Qwen-Image
