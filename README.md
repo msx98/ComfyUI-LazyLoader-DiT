@@ -1,6 +1,6 @@
 # ComfyUI-LazyLoading-DiT
 
-Lets you run FP16 Krea / Flux on Apple Silicon by streaming layers from SSD. No impact on quality because you're loading the full model.
+Lets you run FP16 Krea / Flux at a vastly reduced VRAM footprint on Apple Silicon, by streaming layers from SSD. No impact on quality because you're loading the full model.
 
 You end up with Flux 2 Dev at FP8 consuming ~14GB including TE, Qwen-Image-2511 with a similar footprint, and Klein 9B FP16 taking up ~7GB including TE.
 
