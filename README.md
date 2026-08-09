@@ -1,10 +1,12 @@
 # ComfyUI-LazyLoading-DiT
 
-Lets you run FP16 Krea / Flux at a vastly reduced VRAM footprint on Apple Silicon, by streaming layers from SSD. No impact on quality because you're loading the full model.
+Lets you run FP16 Krea / Flux at a vastly reduced VRAM footprint on Apple Silicon, by streaming layers from SSD. No impact on quality because you're loading the full model. Same concept as expert streaming but applied to diffusion models, except here the SSD is less of a bottleneck than it is during TG, because computing layers is very slow to begin with.
 
 You end up with Flux 2 Dev at FP8 consuming ~14GB including TE, Qwen-Image-2511 with a similar footprint, and Klein 9B FP16 taking up ~7GB including TE.
 
-On my M5 Pro 16c this turned out to not be nearly as slow as it sounds: you spend a lot of time on compute anyway, which makes SSD streaming less painful especially if performed in the background. During test runs I observed up to about a ~10% slowdown per model, but YMMV, I haven't conducted proper benchmarks yet. Either way, this opens up the possibility to use large models in ComfyUI alongside LLMs or fit models that wouldn't otherwise fit.
+On my M5 Pro 16c this turned out to not be nearly as slow as it sounds: you spend a lot of time on compute anyway, which makes SSD streaming less painful especially if performed in the background.
+
+During test runs I observed up to about a ~10% slowdown per model, but YMMV, I haven't conducted proper benchmarks yet. Either way, this opens up the possibility to use large models in ComfyUI alongside LLMs or fit models that wouldn't otherwise fit.
 
 ---
 
